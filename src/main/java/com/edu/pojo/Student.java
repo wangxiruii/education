@@ -5,9 +5,9 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 学生表
  * @Author: ZzuI
  * @Date: 2019/9/11 16:40
+ * @Description: 学生表
  */
 @Data
 public class Student implements Serializable {

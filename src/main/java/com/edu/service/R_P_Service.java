@@ -1,5 +1,7 @@
 package com.edu.service;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import java.util.List;
 
 /**

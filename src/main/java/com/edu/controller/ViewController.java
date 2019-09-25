@@ -18,6 +18,30 @@ public class ViewController {
     public String welcomeview(){
         return "welcome";
     }
+    @RequestMapping("savepayview")
+    public String savePayView(){
+        return "savepay";
+    }
+    @RequestMapping("saveexpensesview")
+    public String saveExpensesView(){
+        return "saveexpenses";
+    }
+    @RequestMapping("savemanpowerview")
+    public String saveManPowerView(){
+        return "savemanpower";
+    }
+    @RequestMapping("saveperformanceview")
+    public String savePerformanceView(){
+        return "saveperformance";
+    }
+    @RequestMapping("savepowersview")
+    public String savePowersView(){
+        return "savepowers";
+    }
+    @RequestMapping("savequitview")
+    public String saveQuitView(){
+        return "savequit";
+    }
     @RequestMapping("addStuview")
     public String addStuview(){
         return "addStu";

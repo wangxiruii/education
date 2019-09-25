@@ -2,6 +2,7 @@ package com.edu.service.Impl;
 
 import com.edu.mapper.R_P_Mapper;
 import com.edu.service.R_P_Service;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

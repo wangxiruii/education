@@ -31,7 +31,7 @@ public class ShiroConfig {
         //需要过滤的定义
         filterFactoryBean.setFilterChainDefinitionMap(map);
         //设置默认的登陆页面
-        filterFactoryBean.setLoginUrl("login");
+        filterFactoryBean.setLoginUrl("/login");
         //权限不足时显示的页面
         filterFactoryBean.setUnauthorizedUrl("error");
         return filterFactoryBean;

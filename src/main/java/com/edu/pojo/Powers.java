@@ -2,21 +2,23 @@ package com.edu.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * @Auther: 王玺瑞
- * @Date: 2019/9/16 20:28
- * @Description:
+ * @Author: ZzuI
+ * @Date: 2019/9/11 16:44
+ * @Description: 权限表
  */
 @Data
-public class Powers {
-    private int poId;
-    private String poName;
-    private String address;
+public class Powers implements Serializable {
+    private int poId;       //编号Id
+    private String poName;  //权限名
+    private String address; //路径
 
     public Powers() {
     }
 
-    public Powers(int poId, String poName,String address) {
+    public Powers(int poId, String poName, String address) {
         this.poId = poId;
         this.poName = poName;
         this.address = address;

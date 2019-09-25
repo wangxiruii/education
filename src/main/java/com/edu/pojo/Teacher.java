@@ -5,9 +5,9 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 教师表
  * @Author: ZzuI
  * @Date: 2019/9/11 16:37
+ * @Description: 教师表
  */
 @Data
 public class Teacher implements Serializable {
@@ -26,14 +26,14 @@ public class Teacher implements Serializable {
 
     public Teacher(int teId, String teName, String teSex,
                    int teAge, String teEducation, String teState,
-                   String teLevel, String teSubject, String teTimeda) {
+                   String teLeavel, String teSubject, String teTimeda) {
         this.teId = teId;
         this.teName = teName;
         this.teSex = teSex;
         this.teAge = teAge;
         this.teEducation = teEducation;
         this.teState = teState;
-        this.teLevel = teLevel;
+        this.teLevel = teLeavel;
         this.teSubject = teSubject;
         this.teTimeda = teTimeda;
     }

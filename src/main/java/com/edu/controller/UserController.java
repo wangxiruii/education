@@ -1,10 +1,8 @@
 package com.edu.controller;
 
 import com.edu.pojo.Powers;
-import com.edu.pojo.Student;
 import com.edu.pojo.Users;
 import com.edu.service.*;
-import org.apache.catalina.connector.Response;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -14,14 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.security.auth.message.callback.PrivateKeyCallback;
+import javax.naming.Name;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -32,7 +27,7 @@ import java.util.Map;
 @Controller
 public class UserController {
     @Autowired
-    private StudentService studentService;
+    private HttpSession session;
     @Autowired
     private UserService userService;
     @Autowired
@@ -41,8 +36,8 @@ public class UserController {
     private U_R_Service u_r_service;
     @Autowired
     private PowersService powersService;
-    @Autowired
-    private HttpSession session;
+
+
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String showLoginForm(){
         return "login";
@@ -79,6 +74,7 @@ public class UserController {
         model.addAttribute("power",power);
         return "main";
     }
+
     //用户退出时
     @RequestMapping("/logout")
     public String logout(){
@@ -91,7 +87,6 @@ public class UserController {
         }
         return "redirect:login";
     }
-    //权限功能分离
     @RequestMapping("caozuo")
     public String caoZuo(String poName){
         //学生管理表单
@@ -118,20 +113,35 @@ public class UserController {
         if (poName.equals("请假申请")){
             return "redirect:vacview";
         }
+
         //离职申请
+        if(poName.equals("离职申请")){
+            return "redirect:quitview";
+        }
         //薪资补助
+        if(poName.equals("薪资补助")){
+            return "redirect:payview";
+        }
         //后勤报销
+        if(poName.equals("后勤报销")){
+            return "redirect:expensesview";
+        }
         //人力申请
+        if(poName.equals("人力申请")){
+            return "redirect:manpowerview";
+        }
+
         //成绩管理
+        if (poName.equals("成绩管理")){
+            return "redirect:performanceview";
+        }
         //权限管理
+        if (poName.equals("权限管理")){
+            return "redirect:powersview";
+        }
         return "error";
     }
-   /* @RequestMapping("stuview")
-    public String stuview(Model model){
-        String poName="学生管理";
-        List<Student> stuall=studentService.loadAllStu();
-        model.addAttribute("stuall",stuall);
-        String stu=powersService.findAdressByName(poName);
-        return stu;
-    }*/
+
+
+
 }
